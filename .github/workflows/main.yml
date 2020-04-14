@@ -6,7 +6,7 @@ on:
 jobs:
   build: 
     runs-on: ubuntu-latest
-
+    container: docker build . -t vde:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -18,5 +18,5 @@ jobs:
           TENANT_ID: ${{ secrets.TENANT_ID }}
           APPID: ${{ secrets.APP_ID }}
           SERVICE_PASS: ${{ secrets.SERVICE_PRINCIPAL_PASS}}
-        run: docker build . -t vdd:latest
+        run: ./entrypoint.ps1
       
