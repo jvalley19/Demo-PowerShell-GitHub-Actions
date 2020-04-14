@@ -11,11 +11,12 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Hi world
-       env:
-        SERVICE_PRINCIPAL: "http://jackGitAct"
-        TENANT_ID: ${{ secrets.TENANT_ID }}
-        APPID: ${{ secrets.APP_ID }}
-        SERVICE_PASS: $ {{ sectrets.SERVICE_PRINCIPAL_PASS}}
-      id: hello
-      uses: ./     
+        shell: pwsh
+        env:
+          SERVICE_PRINCIPAL: "http://jackGitAct"
+          TENANT_ID: ${{ secrets.TENANT_ID }}
+          APPID: ${{ secrets.APP_ID }}
+          SERVICE_PASS: $ {{ sectrets.SERVICE_PRINCIPAL_PASS}}
+
+        uses: ./     
       
