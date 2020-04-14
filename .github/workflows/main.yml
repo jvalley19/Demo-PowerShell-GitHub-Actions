@@ -18,5 +18,5 @@ jobs:
           TENANT_ID: ${{ secrets.TENANT_ID }}
           APPID: ${{ secrets.APP_ID }}
           SERVICE_PASS: ${{ secrets.SERVICE_PRINCIPAL_PASS}}
-        uses: ./
+        run: ./
       
