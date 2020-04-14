@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
       
       - name: Hi world
         shell: pwsh
@@ -17,6 +18,5 @@ jobs:
           TENANT_ID: ${{ secrets.TENANT_ID }}
           APPID: ${{ secrets.APP_ID }}
           SERVICE_PASS: ${{ secrets.SERVICE_PRINCIPAL_PASS}}
-
-         uses: ./
+        uses: ./
       
