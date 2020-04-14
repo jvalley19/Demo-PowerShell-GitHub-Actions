@@ -16,7 +16,7 @@ jobs:
           SERVICE_PRINCIPAL: "http://jackGitAct"
           TENANT_ID: ${{ secrets.TENANT_ID }}
           APPID: ${{ secrets.APP_ID }}
-          SERVICE_PASS: $ {{ secrets.SERVICE_PRINCIPAL_PASS}}
+          SERVICE_PASS: ${{ secrets.SERVICE_PRINCIPAL_PASS}}
 
         run: ./entrypoint.ps1
       
