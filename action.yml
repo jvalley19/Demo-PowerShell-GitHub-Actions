@@ -4,8 +4,8 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-      SERVICE_PRINCIPAL: "http://jackGitAct",
-      TENANT_ID: ${{ secrets.TENANT_ID}},
+      SERVICE_PRINCIPAL: "http://jackGitAct"
+      TENANT_ID: ${{ secrets.TENANT_ID}}
       APPID: ${{ secrets.APP_ID }}
       SERVICE_PASS: $ {{ sectrets.SERVICE_PRINCIPAL_PASS}}
     
