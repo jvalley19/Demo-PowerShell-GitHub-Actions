@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Hi world
-      id: hello
-      user: actions/demo-powershell-github-actions@v1     
+      - name: Hi world
+        id: hello
+        uses: actions/demo-powershell-github-actions@v1     
       
