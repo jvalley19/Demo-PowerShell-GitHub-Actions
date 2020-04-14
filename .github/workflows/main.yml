@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: Hi world
         id: hello
-        uses: actions/demo-powershell-github-actions@v1     
+        uses: ./     
       
