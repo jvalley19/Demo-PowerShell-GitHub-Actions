@@ -6,11 +6,11 @@ $Credential = New-Object System.Management.Automation.PSCredential ($env:SERVICE
 Add-AzAccount -ServicePrincipal -Credential $Credential -Tenant $env:TENANT_ID
 
 $location = "eastus"
-$rgName = "$($env:APPID)-rg"
+$rgName = "fredb-rg"
 #$planName = "$($env:APPID)-plan"
 
 New-AzResourceGroup -Name $rgName -Location $location -Force
-New-AzStorageAccount -Name sjfal32ss3 -Location $location -ResourceGroupName $rgName -SkuName Standard_GRS -Kind StorageV2
+New-AzStorageAccount -Name ddsessfswe332 -Location $location -ResourceGroupName $rgName -SkuName Standard_GRS -Kind StorageV2
 #New-AzAppServicePlan -ResourceGroupName $rgName -Name $planName -Location $location
 #New-AzWebApp -ResourceGroupName $rgName -Location $location -AppServicePlan $planName -Name $env:APPID
 
