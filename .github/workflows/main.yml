@@ -9,11 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      uses: "./.github/azdeploy"
-      
-      env:
-        SERVICE_PRINCIPAL: "http://jackGitAct",
-        TENANT_ID: ${{ secrets.TENANT_ID}},
-        APPID: ${{ secrets.APP_ID }}
-        SERVICE_PASS: $ {{ sectrets.SERVICE_PRINCIPAL_PASS}}
+      -name: Hi world
+      id: hello
+      user: actions/demo-powershell-github-actions@v1     
       
