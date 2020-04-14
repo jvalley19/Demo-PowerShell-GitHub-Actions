@@ -1,4 +1,3 @@
-Name: "New workflow" 
 
 on:
   push:
