@@ -18,5 +18,7 @@ jobs:
           APPID: ${{ secrets.APP_ID }}
           SERVICE_PASS: ${{ secrets.SERVICE_PRINCIPAL_PASS}}
 
-        run: docker build . -t vdc:latest
+        run: |
+        chmod +x /entrypoint.ps1
+        docker build . -t vdc:latest
       
