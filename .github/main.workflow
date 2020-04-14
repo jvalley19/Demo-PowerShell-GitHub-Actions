@@ -6,10 +6,10 @@ workflow "New workflow" {
 
 action "Deploy to Azure" {
   uses = "./.github/azdeploy"
-  secrets = ["SERVICE_PASS"]
+  secrets = ["SERVICE_PRINCIPAL_PASS"]
   env = {
-    SERVICE_PRINCIPAL = "http://GitHubActionsSP",
-    TENANT_ID="YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY",
-    APPID="YourAppIdX100"
+    SERVICE_PRINCIPAL = "http://jackGitAct",
+    TENANT_ID= ${{ secrets.TENANT_ID}},
+    APPID= ${{ secrets.APP_ID }}
   }
 }

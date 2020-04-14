@@ -7,15 +7,13 @@ Add-AzAccount -ServicePrincipal -Credential $Credential -Tenant $env:TENANT_ID
 
 $location = "eastus"
 $rgName = "$($env:APPID)-rg"
-$planName = "$($env:APPID)-plan"
+#$planName = "$($env:APPID)-plan"
 
 New-AzResourceGroup -Name $rgName -Location $location -Force
-New-AzAppServicePlan -ResourceGroupName $rgName -Name $planName -Location $location
-New-AzWebApp -ResourceGroupName $rgName -Location $location -AppServicePlan $planName -Name $env:APPID
+New-AzStorageAccount -Name sjfal32ss3 -Location $location -ResourceGroupName $rgName -SkuName Standard_GRS -Kind StorageV2
+#New-AzAppServicePlan -ResourceGroupName $rgName -Name $planName -Location $location
+#New-AzWebApp -ResourceGroupName $rgName -Location $location -AppServicePlan $planName -Name $env:APPID
 
-[xml]$webappProfile = Get-AzWebAppPublishingProfile -Name $env:APPID -ResourceGroupName $rgName
-$msdeploy = $webappProfile.publishData.publishProfile | Where-Object {$_.publishmethod -eq 'MSDeploy'}
-$remote = "https://$($msdeploy.userName):$($msdeploy.userPWD)@${env:APPID}.scm.azurewebsites.net/${env:APPID}.git"
-
-git remote add azure $remote
-git push azure master
+#[xml]$webappProfile = Get-AzWebAppPublishingProfile -Name $env:APPID -ResourceGroupName $rgName
+#$msdeploy = $webappProfile.publishData.publishProfile | Where-Object {$_.publishmethod -eq 'MSDeploy'}
+#$remote = "https://$($msdeploy.userName):$($msdeploy.userPWD)@${env:APPID}.scm.azurewebsites.net/${env:APPID}.git"
