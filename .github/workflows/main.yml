@@ -9,7 +9,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
       - name: Hi world
-        id: hello
-        uses: ./     
+       env:
+        SERVICE_PRINCIPAL: "http://jackGitAct"
+        TENANT_ID: ${{ secrets.TENANT_ID }}
+        APPID: ${{ secrets.APP_ID }}
+        SERVICE_PASS: $ {{ sectrets.SERVICE_PRINCIPAL_PASS}}
+      id: hello
+      uses: ./     
       
