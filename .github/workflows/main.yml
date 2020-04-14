@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build: "Deploy to Azure" 
+  build: 
     runs-on: ubuntu-latest
 
     steps:
